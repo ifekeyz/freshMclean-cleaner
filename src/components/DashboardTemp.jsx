@@ -364,7 +364,7 @@ function DashboardTemp({
               <div className="text-gray-500 pt-3">
                 <Link to="/CleaningRequest">
                   <img
-                    src={Cleaning}
+                    src={Account}
                     className="w-1/12 h- relative top-6 left-4 filter brightness-75 saturate-125"
                     style={{
                       filter: `saturate(1.25) brightness(${ValueInText1})`,
@@ -375,10 +375,7 @@ function DashboardTemp({
                     className="p-2 pl-11 px-20  py-3 whitespace-nowrap rounded-l-xl"
                     style={{ backgroundColor: Color1, color: tempColor1 }}
                   >
-                    Cleaning Requests{" "}
-                    {/* <span className="relative left-16 px-1 text-xs bg-red-600 rounded-xl text-white">
-                      5
-                    </span> */}
+                    Profile Management
                   </a>
                 </Link>
               </div>
@@ -396,7 +393,7 @@ function DashboardTemp({
                     className="p-2 pl-10 px-28 py-3 whitespace-nowrap rounded-l-xl"
                     style={{ backgroundColor: Color2, color: tempColor2 }}
                   >
-                    User management
+                    Job Scheduling & Management
                   </a>
                 </Link>
               </div>
@@ -414,7 +411,7 @@ function DashboardTemp({
                     className="p-2 pl-10 px-28 py-3 whitespace-nowrap rounded-l-xl"
                     style={{ backgroundColor: Color6, color: tempColor6 }}
                   >
-                    Services
+                    Training and Resources
                   </a>
                 </Link>
               </div>
@@ -432,7 +429,7 @@ function DashboardTemp({
                     className="p-2 pl-10 px-28 py-3 whitespace-nowrap rounded-l-xl"
                     style={{ backgroundColor: Color8, color: tempColor8 }}
                   >
-                    Service Category
+                    Communication Tools
                   </a>
                 </Link>
               </div>
@@ -450,7 +447,7 @@ function DashboardTemp({
                     className="p-2 pl-11 px-40 py-3 whitespace-nowrap rounded-l-xl"
                     style={{ backgroundColor: Color3, color: tempColor3 }}
                   >
-                    Scheduling
+                    Document Management
                   </a>
                 </Link>
               </div>
@@ -468,7 +465,7 @@ function DashboardTemp({
                     className="p-2 pl-11 px-20 py-3 whitespace-nowrap rounded-l-xl"
                     style={{ backgroundColor: Color4, color: tempColor4 }}
                   >
-                    Financial management
+                    Support and Help Desk
                   </a>
                 </Link>
               </div>
@@ -711,47 +708,55 @@ function DashboardTemp({
               <div className="flex space-x-3 relative left-4 text-sm lg:flex-nowrap flex-wrap gap-4">
                 <Link to="/CleaningRequest">
                   <p className="cursor-pointer px-5 rounded-md py-2 relative -top-2 bg-white">
-                    Completed requests
+                  Profile Management
                   </p>
                 </Link>
                 <Link to="/PendingRequest">
                   <p className="cursor-pointer text-gray-400">
-                  Incomplete requests
-                    {/* <span className="relative left-1 text-xs px-1 bg-red-600 rounded-xl text-white">
-                      5
-                    </span> */}
+                  Employment Details 
                   </p>
                 </Link>
                 <Link to="/UpcomingSchedule">
                   <p className="cursor-pointer text-gray-400">
-                    Upcoming schedule cleaning
+                  Job History
                   </p>
                 </Link>
               </div>
             </div>
-            <div className="bg-white h-screen-3 lg:w-screen-3 overflow-x-scroll left-6 pl-4 pt-9 relative top-36 whitespace-nowrap">
-      <h1 className="font-semibold text-lg">Completed requests</h1>
-      <div className="flex mt-9 py-3 px-4 w-screen-4 md:w-screen-5 lg:w-screen-2 header-row">
-        <p className="w-1/5">Client Name</p>
-        <p className="w-1/5">Completed date</p>
-        <p className="w-2/5">Address</p>
-        <p className="w-1/5">Service type</p>
-        <p className="w-1/5">Duration</p>
-        <p className="w-1/5">Payment status</p>
-      </div>
+         <div className="bg-white min-h-screen lg:w-full overflow-x-scroll p-6 pt-12 relative top-36">
+      <h1 className="font-semibold text-lg mb-8">User Details</h1>
 
-      {completedOrders.map(order => (
-        <div key={order._id} className="flex mt-1 py-3 px-4 data-row">
-          <p className="w-1/5">{order.address.customerName}</p>
-          <p className="w-1/5">{new Date(order.desireDate).toLocaleDateString()}</p>
-          <p className="w-2/5">{order.address.streetName}, {order.address.city}, {order.address.postCode}</p>
-          <p className="w-1/5">{order.orderType}</p>
-          <p className="w-1/5">{order.desireTime}</p>
-          <p className={`w-1/5 font-semibold px-2 rounded-xl ${order.payment.isPayment ? 'text-green-400 bg-green-50' : 'text-red-500 bg-red-50'}`}>
-            {order.payment.isPayment ? 'Paid' : 'Unpaid'}
-          </p>
+      {/* Personal Details Section */}
+      <section className="mb-8">
+        <h2 className="font-semibold text-md mb-4">Personal Details</h2>
+        <div className="flex flex-wrap">
+          <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Full Name:</strong> fullname</p>
+          <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Gender:</strong> gender</p>
+          <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Date of Birth:</strong> dob</p>
+          <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Nationality:</strong> nationality</p>
         </div>
-      ))}
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="mb-8">
+        <h2 className="font-semibold text-md mb-4">Contact Information</h2>
+        <div className="flex flex-wrap">
+          <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Email:</strong> email</p>
+          <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Phone Number:</strong> phoneNumber</p>
+          <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Address:</strong> address</p>
+        </div>
+      </section>
+
+      {/* Emergency Contacts Section */}
+      <section>
+        <h2 className="font-semibold text-md mb-4">Emergency Contacts</h2>
+          <div className="flex flex-wrap mb-4 p-4 border rounded-md">
+            <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Name:</strong> name</p>
+            <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Relation:</strong> relation</p>
+            <p className="w-full md:w-1/2 lg:w-1/3 mb-4"><strong>Phone:</strong> phone</p>
+          </div>
+  
+      </section>
     </div>
           </div>
         )}
@@ -769,18 +774,17 @@ function DashboardTemp({
               <div className="flex space-x-3 relative left-4 text-sm lg:flex-nowrap flex-wrap gap-4">
                 <Link to="/CleaningRequest">
                   <p className="cursor-pointer text-gray-400">
-                    Completed requests
+                  Profile Management
                   </p>
                 </Link>
-                <p className="cursor-pointer px-5 bg-white py-2 rounded-md relative -top-2">
-                Incomplete requests{" "}
-                  {/* <span className="relative left-1 text-xs px-1 bg-red-600 rounded-xl text-white">
-                    5
-                  </span> */}
-                </p>
+                <Link to="/PendingRequest">
+                  <p className="cursor-pointer px-5 rounded-md py-2 relative -top-2 bg-white">
+                  Employment Details 
+                  </p>
+                </Link>
                 <Link to="/UpcomingSchedule">
                   <p className="cursor-pointer text-gray-400">
-                    Upcoming schedule cleaning
+                  Job History
                   </p>
                 </Link>
               </div>
@@ -1469,7 +1473,7 @@ function DashboardTemp({
             className="w- lg:h-screen-2 top-24 lg:top-0 lg:z-30 relative lg:left-80 whitespace-nowrap"
             style={{ backgroundColor: myCustomColor }}
           >
-            <div className="top-32 relative lg:left-6">
+            <div className="top-32 relative lg:left-6 ">
               <p className="bg-white relative -top-10 pl-5 px-2 w-24 whitespace-nowrap py-2 rounded-lg left-4">
                 <FontAwesomeIcon icon={faArrowLeft} className="pr-4" />
                 Back
@@ -1478,20 +1482,17 @@ function DashboardTemp({
               <div className="flex space-x-3 relative left-4 text-sm lg:flex-nowrap flex-wrap gap-4">
                 <Link to="/CleaningRequest">
                   <p className="cursor-pointer text-gray-400">
-                    Completed requests
+                  Profile Management
                   </p>
                 </Link>
                 <Link to="/PendingRequest">
                   <p className="cursor-pointer text-gray-400">
-                  Incomplete requests{" "}
-                    {/* <span className="relative left-3 text-xs px-1 bg-red-600 rounded-xl text-white">
-                      5
-                    </span> */}
+                  Employment Details 
                   </p>
                 </Link>
                 <Link to="/UpcomingSchedule">
-                  <p className="cursor-pointer px-5 bg-white py-2  rounded-md relative -top-2 lg:left-0 -left-3">
-                    Upcoming schedule cleaning
+                  <p className="cursor-pointer px-5 rounded-md py-2 relative -top-2 bg-white">
+                  Job History
                   </p>
                 </Link>
               </div>

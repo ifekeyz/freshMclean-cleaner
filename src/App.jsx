@@ -103,8 +103,6 @@ function App() {
         <Route path='/ServiceAdd' element={ <ServiceAdd/> } />
         
 
-
-
         <Route path='/CleanersHome' element={ <CleanersHome/> } />
         <Route path='/Reviews' element={ <Reviews/> } />
       </Routes>

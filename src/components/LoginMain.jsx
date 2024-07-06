@@ -88,6 +88,7 @@ function HelloAdmin() {
               </button>
             </Link>
           </div>
+          <p className='mt-12 text-center font-semibold '>Cleaner Portal</p>
           <div className=" flex-1 items-center relative my-20 bg-white border-gray-500 border-opacity-10 border-2 rounded-md h-[140%] w-[104%] p-8">
             <div className="flex-1 text-center top-5 relative items-center justify-center"></div>
             <div className="my-14 -mt-12">
