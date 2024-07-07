@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 // import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import { UserProvider } from './ContextProvider/UserContext';
 
 // eslint-disable-next-line no-unused-vars
 import HelloAdmin from './components/HelloAdmin'
@@ -58,6 +58,7 @@ function App() {
 
   return (
     <>
+    <UserProvider>
     <BrowserRouter>
       <Routes>
         <Route index element={<LoginMain />} />
@@ -107,24 +108,8 @@ function App() {
         <Route path='/Reviews' element={ <Reviews/> } />
       </Routes>
     </BrowserRouter>
-    {/* <HelloAdmin/> */}
-    {/* <SignupPage/> */}
-    {/* <PersonalDetails/> */}
-    {/* <ContactInfo/> */}
-    {/* <ProfessionalInfo/> */}
-    {/* <Banking/> */}
-    {/* <Congrats/> */}
-    {/* <LoginPage/> */}
-    {/* <DashboardTemp/> */}
-    {/* <WelcomeDashboard/> */}
-    {/* <CleaningRequest/> */}
-    {/* <PendingRequest/> */}
-    {/* <PendingPop/> */}
-    {/* <PendingPopAssign/> */}
-    {/* <SuccessJobAlert/> */}
-    {/* <UpcomingSchedule/> */}
-    {/* <RequestHistory/> */}
-    {/* <RequestHistory/> */}
+    </UserProvider>
+   
     </>
   )
 }
